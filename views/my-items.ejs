@@ -1,0 +1,64 @@
+<%- include("partials/header") %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">My Posted Items</h2>
+    <a href="/items/new" class="btn btn-primary btn-rich">+ Post New Item</a>
+</div>
+
+<div class="row row-cols-1 row-cols-lg-2 g-4">
+    <% items.forEach(item => { %>
+        <div class="col">
+            <div class="card h-100 glass-card <%= item.status === 'Claim Requested' ? 'border-warning border-2' : 'border-0' %>">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title fw-bold"><%= item.title %></h5>
+                        <span class="badge rounded-pill <%= item.status === 'Resolved' ? 'bg-secondary' : (item.status === 'Claim Requested' ? 'bg-warning text-dark' : 'bg-primary') %>">
+                            <%= item.status %>
+                        </span>
+                    </div>
+                    <p class="text-secondary small mb-2"><%= new Date(item.createdAt).toLocaleDateString() %></p>
+                    <p class="card-text"><%= item.description %></p>
+
+                    <% if (item.status === "Claim Requested") { %>
+                        <div class="alert alert-warning mt-3 mb-0">
+                            <i class="bi bi-exclamation-circle-fill"></i> 
+                            <strong>Action Required:</strong> Someone has claimed this item.
+                            
+                            <div class="d-flex gap-2 mt-3">
+                                <form action="/items/<%= item._id %>/approve" method="POST" class="flex-grow-1">
+                                    <button type="submit" class="btn btn-success w-100">
+                                        <i class="bi bi-check-lg"></i> Approve (Resolved)
+                                    </button>
+                                </form>
+                                
+                                <form action="/items/<%= item._id %>/reject" method="POST" class="flex-grow-1">
+                                    <button type="submit" class="btn btn-outline-danger w-100">
+                                        <i class="bi bi-x-lg"></i> Reject
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
+                    <small class="text-muted">Location: <%= item.location %></small>
+                    
+                    <form action="/items/<%= item._id %>/delete" method="POST" onsubmit="return confirm('Are you sure?');">
+                        <button type="submit" class="btn btn-link text-danger p-0 text-decoration-none small">
+                            Delete Post
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<% if(items.length === 0) { %>
+    <div class="text-center py-5 text-secondary">
+        <p>You haven't posted any items yet.</p>
+    </div>
+<% } %>
+
+<%- include("partials/footer") %>

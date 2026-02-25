@@ -1,0 +1,271 @@
+<%- include("partials/header") %>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<section class="overflow-hidden d-flex align-items-center " style="min-height: 90vh;">
+    
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+
+    <div class="container"> <div class="row align-items-center">
+            
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                <span class="badge bg-white bg-opacity-75 text-primary border border-primary rounded-pill px-3 py-2 mb-3 fw-bold">
+                    🚀 Version 2.0 is Live
+                </span>
+                
+                <h1 class="display-3 fw-bolder mb-3 lh-1 text-white"> Lost something? <br>
+                    <span class="hero-title">We'll help you find it.</span>
+                </h1>
+                
+                <p class="lead text-secondary mb-4 col-lg-10">
+                    The official campus network connecting students with their lost belongings.
+                    Don't panic—just post it.
+                </p>
+
+                <div class="d-flex gap-3 flex-column flex-sm-row">
+                    <% if(!currentUser) { %>
+                        <a href="/register" class="btn btn-rich btn-lg rounded-pill px-5 shadow-lg">Get Started</a>
+                        <a href="/login" class="btn btn-outline-secondary btn-lg rounded-pill px-4">Log In</a>
+                    <% } else { %>
+                        <a href="/dashboard" class="btn btn-rich btn-lg rounded-pill px-5 shadow-lg">Go to Dashboard</a>
+                    <% } %>
+                </div>
+
+                <div class="mt-5 d-flex gap-4 text-secondary small fw-bold">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-shield-fill-check text-success fs-5"></i> Secure
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-lightning-charge-fill text-warning fs-5"></i> Fast
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-people-fill text-primary fs-5"></i> Campus Wide
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200">
+                <div class="position-relative mx-auto" style="max-width: 500px; height: 400px;">
+                    <div class="glass-card p-4 position-absolute top-50 start-50 translate-middle animate-float w-75 shadow-lg text-center border-0" style="z-index: 2;">
+                        <i class="bi bi-search-heart display-1 text-primary mb-3 d-block"></i>
+                        <h4 class="fw-bold">Found: Blue Backpack</h4>
+                        <p class="text-muted small">"Found near the library cafeteria. Looks new..."</p>
+                        <button class="btn btn-sm btn-primary rounded-pill w-100 mt-2">Claim Item</button>
+                    </div>
+                    <div class="glass-card p-3 position-absolute top-0 end-0 animate-float-delayed shadow border-0" style="border-radius: 15px; z-index: 1;">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="bg-success rounded-circle p-2 text-white lh-1"><i class="bi bi-check-lg"></i></div>
+                            <div>
+                                <div class="small fw-bold">Returned</div>
+                                <div class="text-secondary" style="font-size: 0.7rem;">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-3 position-absolute bottom-0 start-0 animate-float shadow border-0" style="border-radius: 15px; z-index: 1;">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="bg-warning rounded-circle p-2 text-white lh-1"><i class="bi bi-bell-fill"></i></div>
+                            <div>
+                                <div class="small fw-bold">New Alert</div>
+                                <div class="text-secondary" style="font-size: 0.7rem;">ID Card Found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="glass-card p-4 p-lg-5 shadow-sm border-0" data-aos="zoom-in">
+            <div class="row text-center g-4 justify-content-center">
+                <div class="col-md-4 border-end border-secondary border-opacity-25">
+                    <h2 class="display-5 fw-bold text-primary mb-0">500+</h2>
+                    <p class="text-secondary mb-0">Items Reported</p>
+                </div>
+                <div class="col-md-4 border-end border-secondary border-opacity-25">
+                    <h2 class="display-5 fw-bold text-success mb-0">320+</h2>
+                    <p class="text-secondary mb-0">Successfully Returned</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-5 fw-bold text-warning mb-0">24/7</h2>
+                    <p class="text-secondary mb-0">Portal Access</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 mb-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h6 class="text-primary fw-bold text-uppercase ls-2">Workflow</h6>
+            <h2 class="fw-bold display-6">How It Works</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 bg-transparent">
+                    <div class="card-body position-relative p-4">
+                        <span class="step-number">01</span>
+                        <div class="step-content pt-3">
+                            <div class="feature-icon-box"><i class="bi bi-camera"></i></div>
+                            <h4 class="fw-bold">Post an Item</h4>
+                            <p class="text-secondary">Lost something? Post details. Found something? Upload a description to help the owner find it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 bg-transparent">
+                    <div class="card-body position-relative p-4">
+                        <span class="step-number">02</span>
+                        <div class="step-content pt-3">
+                            <div class="feature-icon-box"><i class="bi bi-bell"></i></div>
+                            <h4 class="fw-bold">Get Notified</h4>
+                            <p class="text-secondary">Our smart search helps match lost items. You'll get notified immediately when a match is found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 bg-transparent">
+                    <div class="card-body position-relative p-4">
+                        <span class="step-number">03</span>
+                        <div class="step-content pt-3">
+                            <div class="feature-icon-box"><i class="bi bi-hand-thumbs-up"></i></div>
+                            <h4 class="fw-bold">Claim & Recover</h4>
+                            <p class="text-secondary">Verify ownership securely through the portal and arrange a meetup to get your stuff back.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-transparent rounded-4" data-aos="fade-up">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <h2 class="fw-bold mb-3">Why use our portal?</h2>
+                <p class="text-secondary mb-4">Unlike WhatsApp groups or notice boards, our platform is organized, searchable, and verified.</p>
+                <ul class="list-unstyled d-flex flex-column gap-3">
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        <span>Centralized Database</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        <span>Email Notifications</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        <span>Privacy Protection</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="glass-card p-4 rounded-4 h-100 hover-card text-center text-lg-start">
+                            <div class="icon-circle mb-3 mx-auto mx-lg-0">
+                                <i class="bi bi-shield-lock-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Secure & Private</h5>
+                            <p class="small opacity-75 m-0">
+                                Contact details are hidden. Only verified students can connect safely.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="glass-card p-4 rounded-4 h-100 hover-card text-center text-lg-start">
+                            <div class="icon-circle mb-3 mx-auto mx-lg-0">
+                                <i class="bi bi-phone-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Mobile Ready</h5>
+                            <p class="small opacity-75 m-0">
+                                Responsive design lets you post or claim items instantly from your phone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Student Stories</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="flip-left">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="avatar-circle bg-primary text-white">AS</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Aryan S.</h6>
+                            <small class="text-muted">CS Dept</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary fst-italic">"I lost my practical file a day before submission. Someone posted it here within an hour. Lifesaver!"</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="avatar-circle bg-success text-white">NP</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Neha P.</h6>
+                            <small class="text-muted">Mech Dept</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary fst-italic">"Found a wallet in the canteen. Uploaded it here and the owner claimed it safely. Great initiative."</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="avatar-circle bg-warning text-dark">RK</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Rahul K.</h6>
+                            <small class="text-muted">Civil Dept</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary fst-italic">"Much better than spamming WhatsApp groups. The search feature actually works."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 my-5">
+    <div class="container">
+        <div class="cta-gradient rounded-4 text-white text-center shadow-lg position-relative overflow-hidden" data-aos="zoom-in">
+            <div class="position-relative py-5 px-3" style="z-index: 10;">
+                <h2 class="fw-bold display-6 mb-3">Ready to find your stuff?</h2>
+                <p class="lead mb-4 opacity-75 col-lg-8 mx-auto">Join verified students making our campus simpler and more secure.</p>
+                <a href="/register" class="btn btn-light text-primary fw-bold btn-lg rounded-pill px-5 shadow-sm">Create Free Account</a>
+            </div>
+            
+            <div class="position-absolute top-0 start-0 translate-middle rounded-circle bg-white" 
+                 style="width: 300px; height: 300px; filter: blur(40px); opacity: 0.1; z-index: 1;"></div>
+                 
+            <div class="position-absolute bottom-0 end-0 translate-middle-x rounded-circle bg-white" 
+                 style="width: 200px; height: 200px; filter: blur(30px); opacity: 0.1; z-index: 1;"></div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+        offset: 100
+    });
+</script>
+
+<%- include("partials/footer") %>

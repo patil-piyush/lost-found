@@ -1,0 +1,42 @@
+<%- include("partials/header") %>
+
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card">
+      <div class="card-body p-4">
+        <h3 class="card-title text-center mb-4">Post a New Item</h3>
+        
+        <form action="/items" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Item Title</label>
+            <input type="text" name="title" class="form-control" placeholder="e.g. Blue Dell Laptop" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea name="description" class="form-control" rows="3" placeholder="Details about the item..."></textarea>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Location</label>
+                <input type="text" name="location" class="form-control" placeholder="e.g. Library 2nd Floor">
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select">
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+              </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Submit Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

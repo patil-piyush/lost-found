@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+<div class="row justify-content-center align-items-center h-100">
+    <div class="col-md-5 col-lg-4">
+        <div class="glass-card p-4 p-md-5">
+            <div class="text-center mb-4">
+                <i class="bi bi-person-circle display-4 text-primary"></i>
+                <h2 class="fw-bold mt-2">Welcome Back</h2>
+                <p class="text-secondary small">Please enter your details to sign in.</p>
+            </div>
+
+            <form action="/login" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-rich w-100 py-3 rounded-3 fw-bold">Sign In</button>
+            </form>
+
+            <div class="text-center mt-4">
+                <span class="text-secondary">New here?</span>
+                <a href="/register" class="text-decoration-none fw-bold text-primary">Create Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
